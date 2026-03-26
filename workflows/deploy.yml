@@ -2,8 +2,10 @@
   uses: appleboy/ssh-action@v1.0.3
   with:
     host: ${{ secrets.LIGHTSAIL_HOST }}
-    username: ${{ secrets.LIGHTSAIL_USER }}
+    username: bitnami
     key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
     script: |
-      cd /opt/bitnami/wordpress
+      cd /opt/bitnami/wordpress/wp-content/themes/
       git pull origin main
+
+      sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/
