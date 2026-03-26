@@ -5,7 +5,7 @@
     username: bitnami
     key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
     script: |
-      cd /opt/bitnami/wordpress/wp-content/themes/
+      cd /opt/bitnami/wordpress/wp-content/themes/tennis-club
       git pull origin main
 
-      sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/
+      sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/tennis-club
